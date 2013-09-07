@@ -2,28 +2,104 @@
 %html
   %head
     %title Sterk Coaching
-    %link(rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css")
+    <!-- JQuery from CDN -->
+    %script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+    <!-- Bootstrap from CDN -->
+    %link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css")
+    %link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css")
+    %script(src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js")
     %link(rel="stylesheet" href="css/styles.css")
   %body
-    #wrapper
-      #header
-        %h1 Sterk Coaching
-        %h2 Welkom op mijn website.
-      #nav
-        %ol
-          %a(href="/")
-            %li Hoofdpagina
-          %a(href="about")
-            %li De coaches
+    .navbar-wrapper
+      .container
+        .navbar.navbar-inverse.navbar-static-top
+          .navbar-header
+            %a.navbar-toggle{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.navbar-brand{:href => "#"} Sterk Coaching
+          .navbar-collapse.collapse
+            %ul.nav.navbar-nav
+              %li.active
+                %a{:href => "#"} Home
+              %li
+                %a{:href => "/about", :target => "ext"} About
+              %li
+                %a{:href => "/contact"} Contact
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Dropdown
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} Action
+                  %li
+                    %a{:href => "#"} Another action
+                  %li
+                    %a{:href => "#"} Something else here
+                  %li.divider
+                  %li
+                    %a{:href => "#"} Separated link
+                  %li
+                    %a{:href => "#"} One more separated link
 
-      #content
-        =yield
 
-      #side_bar
-        %h1 Contact:
+    #myCarousel.carousel.slide
+      %ol.carousel-indicators
+        %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+      .carousel-inner
+        .item.active
+          %img{:src => "http://lorempixel.com/g/1500/600/city/1"}/
+          .container
+            .carousel-caption
+              %h1 Sterk Coaching
+              %p
+                There are Things Known, and Things Unknown, and In Between Are the Doors
+                %a{:href => "http://getbootstrap.com", :title => "Bootstrap 3"} Bootstrap 3 RC 1 is now available!
+              %p
+                %a.btn.btn-large.btn-primary{:href => "#"} Sign up today
+        .item
+          %img{:src => "http://lorempixel.com/1500/600/abstract"}/
+          .container
+            .carousel-caption
+              %h1 Sterk Coaching
+              %p nog een spreuk
+              %p
+                %a.btn.btn-large.btn-primary{:href => "#"} Learn more
+
+      / Controls
+      %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+        %span.icon-prev
+      %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+        %span.icon-next
+
+    .container.marketing
+      .row
+        .col-md-4.text-center
+          %img.img-circle{:src => "http://placehold.it/140x140"}/
+          %h2 Mobile-first
+          %p Tablets, phones, laptops. The new 3 promises to be mobile friendly from the start.
+          %p
+            %a.btn.btn-default{:href => "#"} View details »
+        .col-md-4.text-center
+          %img.img-circle{:src => "http://placehold.it/140x140"}/
+          %h2 One Fluid Grid
+          %p There is now just one percentage-based grid for Bootstrap 3. Customize for fixed widths.
+          %p
+            %a.btn.btn-default{:href => "#"} View details »
+        .col-md-4.text-center
+          %img.img-circle{:src => "http://placehold.it/140x140"}/
+          %h2 LESS is More
+          %p Improved support for mixins make the new Bootstrap 3 easier to customize.
+          %p
+            %a.btn.btn-default{:href => "#"} View details »
+
+      %footer
+        %p.pull-right
+          %a{:href => "#"} Back to top
         %p
-          mail@ildi.nl
-
-      #footer
-        %p
-          choach@ildi.nl | tel. 06 41 82 1884 | (c) Flesch B.V. 2013
+          This Bootstrap layout is compliments of Bootply. ·
+          %a{:href => "http://www.bootply.com/62603"} Edit on Bootply.com
