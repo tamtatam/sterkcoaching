@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %title Sterk Coaching
+    %link(rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css")
+    %link(rel="stylesheet" href="css/styles.css")
+  %body
+    #wrapper
+      #header
+        %h1 Sterk Coaching
+        %h2 Welkom op mijn website.
+      #nav
+        %ol
+          %a(href="/")
+            %li Hoofdpagina
+          %a(href="about")
+            %li De coaches
+
+      #content
+        =yield
+
+      #side_bar
+        %h1 Contact:
+        %p
+          mail@ildi.nl
+
+      #footer
+        %p
+          choach@ildi.nl | tel. 06 41 82 1884 | (c) Flesch B.V. 2013
